@@ -7,7 +7,26 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class KolkoIKrzyzykApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(KolkoIKrzyzykApplication.class, args);
+        System.out.print("|");
+        System.out.print(" ");
+        System.out.print("|");
+        System.out.print(" ");
+        System.out.print("|");
+        System.out.print(" ");
+        System.out.println("|");
+        System.out.print("|");
+        System.out.print(" ");
+        System.out.print("|");
+        System.out.print(" ");
+        System.out.print("|");
+        System.out.print(" ");
+        System.out.println("|");
+        System.out.print("|");
+        System.out.print(" ");
+        System.out.print("|");
+        System.out.print(" ");
+        System.out.print("|");
+        System.out.print(" ");
+        System.out.println("|");
     }
-
 }
