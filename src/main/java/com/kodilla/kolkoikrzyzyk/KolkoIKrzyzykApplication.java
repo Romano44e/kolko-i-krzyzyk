@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.List;
+import java.util.Scanner;
 
 @SpringBootApplication
 public class KolkoIKrzyzykApplication {
@@ -13,6 +14,6 @@ public class KolkoIKrzyzykApplication {
         Game game = new Game();
         game.startGame();
 
-
     }
 }
+

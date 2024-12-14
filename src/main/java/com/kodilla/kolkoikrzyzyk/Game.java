@@ -11,104 +11,60 @@ public class Game {
         InitialInformation initialInformation = new InitialInformation();
         PlayerNames playerNames = new PlayerNames();
         EmptyBoard emptyBoard = new EmptyBoard();
-        List<String> emptyFieldsBoard = emptyBoard.getEmptyFieldsBoard();
-        Board board = new Board(emptyFieldsBoard);
         PlayersSigns playersSigns = new PlayersSigns();
+        PlayersMoves playersMoves = new PlayersMoves();
+        Board boardPrint = new Board();
+        Result result = new Result();
 
         initialInformation.getInitialInformation();
         String player1Name = playerNames.getPlayer1Name();
         String player2Name = playerNames.getPlayer2Name();
-        System.out.println(player1Name + ", please select your sign (O or X): ");
+        String[][] board = emptyBoard.getEmptyBoard();
 
-        List<String> playersSigns1 = playersSigns.playersSigns();
+        System.out.println(player1Name + ", please select your sign (O or X): ");
+        List<String> playersSigns1 = playersSigns.getPlayersSigns();
         String player1Sign = playersSigns1.get(0);
         String player2Sign = playersSigns1.get(1);
 
-        Map<String, String> playersSignsMap = new HashMap<>();
-        playersSignsMap.put(player1Name, player1Sign);
-        playersSignsMap.put(player2Name, player2Sign);
-
-        System.out.println(player1Name + " choose " + player1Sign + "\n"
-                + player2Name + " choose " + player2Sign);
+        System.out.println(player1Name + " have chose " + player1Sign + "\n"
+                + player2Name + " have chose " + player2Sign);
         System.out.println();
         System.out.println("Let's play!");
-
         System.out.println();
-        List<String> boardFields = board.printBoard(emptyFieldsBoard);
+        boardPrint.printBoard(board);
+        System.out.println();
 
         boolean endGame = false;
-        int player1pointscounter = 0;
-        int player2pointscounter = 0;
 
         while (!endGame) {
 
-            for (Map.Entry<String, String> entry : playersSignsMap.entrySet()) {
+            System.out.println(player1Name + ", your turn");
 
-                String playerName = entry.getKey();
-                System.out.println(playerName + ", select your field: ");
-
-                PlayersMoves playersMoves = new PlayersMoves();
-
-                try {
-                    int playerMove = playersMoves.makeMove();
-                    String playerSign = entry.getValue();
-                    boardFields.set(playerMove, playerSign);
-
-                    board.printBoard(boardFields);
-                } catch (WrongFieldException e) {
-                    System.out.println(e.getMessage());
-                }
-
-//                int playerMove = playersMoves.makeMove();
-
+            String[][] board1 = playersMoves.getPlayerMove(board, player1Sign);
+            boardPrint.printBoard(board1);
+            boolean isWinner1 = result.isWinner(board1);
+            boolean draw1 = result.isDraw(board1);
+            if (isWinner1) {
+                System.out.println(player1Name + " won!");
                 System.out.println();
-
-//                String playerSign = entry.getValue();
-
-//                if (!boardFields.get(playerMove).equals(" ")) {
-//                    throw new OccupiedFieldException("the field is already occupied! Choose empty one!");
-//                }
-
-//                boardFields.set(playerMove, playerSign);
-//
-//                board.printBoard(boardFields);
-
-                if ((boardFields.get(0).equals(player1Sign) && boardFields.get(1).equals(player1Sign) && boardFields.get(2).equals(player1Sign))
-                        || (boardFields.get(3).equals(player1Sign) && boardFields.get(4).equals(player1Sign) && boardFields.get(5).equals(player1Sign))
-                        || (boardFields.get(6).equals(player1Sign) && boardFields.get(7).equals(player1Sign) && boardFields.get(8).equals(player1Sign))
-                        || (boardFields.get(0).equals(player1Sign) && boardFields.get(3).equals(player1Sign) && boardFields.get(6).equals(player1Sign))
-                        || (boardFields.get(1).equals(player1Sign) && boardFields.get(4).equals(player1Sign) && boardFields.get(7).equals(player1Sign))
-                        || (boardFields.get(2).equals(player1Sign) && boardFields.get(5).equals(player1Sign) && boardFields.get(8).equals(player1Sign))
-                        || (boardFields.get(0).equals(player1Sign) && boardFields.get(4).equals(player1Sign) && boardFields.get(8).equals(player1Sign))
-                        || (boardFields.get(2).equals(player1Sign) && boardFields.get(4).equals(player1Sign) && boardFields.get(6).equals(player1Sign))) {
-
-                    player1pointscounter++;
-                    System.out.println(player1Name + " wins!");
-                    System.out.println("Game result: " + "\n"
-                    + player1Name + ": " + player1pointscounter + "\n"
-                    + player2Name + ": " + player2pointscounter);
-
-                        endGame = true;
-                }
-
-                if ((boardFields.get(0).equals(player2Sign) && boardFields.get(1).equals(player2Sign) && boardFields.get(2).equals(player2Sign))
-                        || (boardFields.get(3).equals(player2Sign) && boardFields.get(4).equals(player2Sign) && boardFields.get(5).equals(player2Sign))
-                        || (boardFields.get(6).equals(player2Sign) && boardFields.get(7).equals(player2Sign) && boardFields.get(8).equals(player2Sign))
-                        || (boardFields.get(0).equals(player2Sign) && boardFields.get(3).equals(player2Sign) && boardFields.get(6).equals(player2Sign))
-                        || (boardFields.get(1).equals(player2Sign) && boardFields.get(4).equals(player2Sign) && boardFields.get(7).equals(player2Sign))
-                        || (boardFields.get(2).equals(player2Sign) && boardFields.get(5).equals(player2Sign) && boardFields.get(8).equals(player2Sign))
-                        || (boardFields.get(0).equals(player2Sign) && boardFields.get(4).equals(player2Sign) && boardFields.get(8).equals(player2Sign))
-                        || (boardFields.get(2).equals(player2Sign) && boardFields.get(4).equals(player2Sign) && boardFields.get(6).equals(player2Sign))) {
-
-                    player2pointscounter++;
-                    System.out.println(player2Name + " wins!");
-                    System.out.println("Game result: " + "\n"
-                            + player1Name + ": " + player1pointscounter + "\n"
-                            + player2Name + ": " + player2pointscounter);
-
-                        endGame = true;
-                }
+                break;
             }
+
+            System.out.println(player2Name + ", your turn");
+            String[][] board2 = playersMoves.getPlayerMove(board1, player2Sign);
+            boardPrint.printBoard(board2);
+            boolean isWinner2 = result.isWinner(board2);
+            boolean draw2 = result.isDraw(board2);
+            if (isWinner2) {
+                System.out.println(player2Name + " won!");
+                System.out.println();
+            }
+
+            if (draw1 || draw2) {
+                System.out.println("It's a draw!");
+                break;
+            }
+            endGame = isWinner2;
         }
     }
 }

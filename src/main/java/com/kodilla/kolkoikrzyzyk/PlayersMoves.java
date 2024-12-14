@@ -1,36 +1,30 @@
 package com.kodilla.kolkoikrzyzyk;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class PlayersMoves {
 
-    Scanner scanner = new Scanner(System.in);
+    public String[][] getPlayerMove(String[][] board, String playerSign) throws NoSuchFieldException, OccupiedFieldException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose column: ");
+        int column = scanner.nextInt();
+        System.out.println("Choose row: ");
+        int row = scanner.nextInt();
+        System.out.println();
 
-    public int makeMove() throws WrongFieldException{
-        String playerMove = scanner.nextLine();
+//        if (row > board.length || row < 0 || column > board.length || column < 0) {
+//            throw new NoSuchFieldException("Invalid row or column!");
+//        }
+//
+//        if (board[row][column].equals(playerSign)) {
+//            throw new OccupiedFieldException("This field is not empty!. Choose another one!");
+//        }
 
-        if (!playerMove.equals("A1") && !playerMove.equals("A2") && !playerMove.equals("A3")
-        && !playerMove.equals("B1") && !playerMove.equals("B2") && !playerMove.equals("B3")
-        && !playerMove.equals("C1") && !playerMove.equals("C2") && !playerMove.equals("C3"))
-        {
-            throw new WrongFieldException("Wrong field!");
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                board[row - 1][column - 1] = playerSign;
+            }
         }
-
-        Map<String, Integer> fieldsMap = new HashMap<>();
-        fieldsMap.put("A1", 0);
-        fieldsMap.put("A2", 1);
-        fieldsMap.put("A3", 2);
-        fieldsMap.put("B1", 3);
-        fieldsMap.put("B2", 4);
-        fieldsMap.put("B3", 5);
-        fieldsMap.put("C1", 6);
-        fieldsMap.put("C2", 7);
-        fieldsMap.put("C3", 8);
-
-        int field = fieldsMap.get(playerMove);
-
-        return field;
+        return board;
     }
 }
