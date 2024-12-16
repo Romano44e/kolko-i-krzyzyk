@@ -10,6 +10,12 @@ public class RealPlayerMove {
         int column = scanner.nextInt();
         System.out.println("Choose row: ");
         int row = scanner.nextInt();
+
+        if (row > board.length || row <= 0 || column > board.length || column <= 0) {
+            System.out.println("Invalid row or column!");
+            return getRealPlayerMove(board);
+        }
+
         Integer[] playerMoveBoard = new Integer[2];
         playerMoveBoard[0] = column;
         playerMoveBoard[1] = row;
@@ -19,12 +25,8 @@ public class RealPlayerMove {
             System.out.println("Field is not empty. Choose another one!");
             return getRealPlayerMove(board);
         }
+
         System.out.println();
         return playerMoveBoard;
     }
-
-//        if (row > board.length || row <= 0 || column > board.length || column <= 0) {
-//            System.out.println("Invalid row or column!");
-//            getPlayerMove(board, playerSign);
-//        }
 }

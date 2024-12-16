@@ -36,13 +36,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerRow1X() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "X";
         board[0][1] = "X";
         board[0][2] = "X";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -51,13 +51,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerRow2X() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[1][0] = "X";
         board[1][1] = "X";
         board[1][2] = "X";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -66,13 +66,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerRow3X() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[2][0] = "X";
         board[2][1] = "X";
         board[2][2] = "X";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -81,13 +81,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerColumn1X() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "X";
         board[1][0] = "X";
         board[2][0] = "X";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -96,13 +96,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerColumn2X() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][1] = "X";
         board[1][1] = "X";
         board[2][1] = "X";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -111,13 +111,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerColumn3X() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][2] = "X";
         board[1][2] = "X";
         board[2][2] = "X";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -126,13 +126,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerSlant1X() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "X";
         board[1][1] = "X";
         board[2][2] = "X";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -141,13 +141,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerSlant2X() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][2] = "X";
         board[1][1] = "X";
         board[2][0] = "X";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -156,13 +156,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerRow1O() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "O";
         board[0][1] = "O";
         board[0][2] = "O";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -171,13 +171,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerRow2O() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[1][0] = "O";
         board[1][1] = "O";
         board[1][2] = "O";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -186,13 +186,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerRow3O() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[2][0] = "O";
         board[2][1] = "O";
         board[2][2] = "O";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -201,13 +201,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerColumn1O() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "O";
         board[1][0] = "O";
         board[2][0] = "O";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -216,13 +216,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerColumn2O() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][1] = "O";
         board[1][1] = "O";
         board[2][1] = "O";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -231,13 +231,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerColumn3O() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][2] = "O";
         board[1][2] = "O";
         board[2][2] = "O";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -246,13 +246,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerSlant1O() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "O";
         board[1][1] = "O";
         board[2][2] = "O";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -261,13 +261,13 @@ class KolkoIKrzyzykTestSuite {
     void testIsWinnerSlant2O() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][2] = "O";
         board[1][1] = "O";
         board[2][0] = "O";
         Result result = new Result();
         //When
-        boolean isWinner = result.isWinner(board);
+        boolean isWinner = result.isWinner3x3(board);
         //Then
         assertTrue(isWinner);
     }
@@ -276,7 +276,7 @@ class KolkoIKrzyzykTestSuite {
     void testIsDrawTrue() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "X";
         board[0][1] = "O";
         board[0][2] = "X";
@@ -288,7 +288,7 @@ class KolkoIKrzyzykTestSuite {
         board[2][2] = "O";
         Result result = new Result();
         //When
-        boolean isDraw = result.isDraw(board);
+        boolean isDraw = result.isDraw3x3(board);
         //Then
         assertTrue(isDraw);
     }
@@ -297,7 +297,7 @@ class KolkoIKrzyzykTestSuite {
     void testIsDrawFalse11() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = " ";
         board[0][1] = "O";
         board[0][2] = "X";
@@ -309,7 +309,7 @@ class KolkoIKrzyzykTestSuite {
         board[2][2] = "O";
         Result result = new Result();
         //When
-        boolean isDraw = result.isDraw(board);
+        boolean isDraw = result.isDraw3x3(board);
         //Then
         assertFalse(isDraw);
     }
@@ -318,7 +318,7 @@ class KolkoIKrzyzykTestSuite {
     void testIsDrawFalse12() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "X";
         board[0][1] = " ";
         board[0][2] = "X";
@@ -330,7 +330,7 @@ class KolkoIKrzyzykTestSuite {
         board[2][2] = "O";
         Result result = new Result();
         //When
-        boolean isDraw = result.isDraw(board);
+        boolean isDraw = result.isDraw3x3(board);
         //Then
         assertFalse(isDraw);
     }
@@ -339,7 +339,7 @@ class KolkoIKrzyzykTestSuite {
     void testIsDrawFalse13() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "X";
         board[0][1] = "O";
         board[0][2] = " ";
@@ -351,7 +351,7 @@ class KolkoIKrzyzykTestSuite {
         board[2][2] = "O";
         Result result = new Result();
         //When
-        boolean isDraw = result.isDraw(board);
+        boolean isDraw = result.isDraw3x3(board);
         //Then
         assertFalse(isDraw);
     }
@@ -360,7 +360,7 @@ class KolkoIKrzyzykTestSuite {
     void testIsDrawFalse21() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "X";
         board[0][1] = "O";
         board[0][2] = "X";
@@ -372,7 +372,7 @@ class KolkoIKrzyzykTestSuite {
         board[2][2] = "O";
         Result result = new Result();
         //When
-        boolean isDraw = result.isDraw(board);
+        boolean isDraw = result.isDraw3x3(board);
         //Then
         assertFalse(isDraw);
     }
@@ -381,7 +381,7 @@ class KolkoIKrzyzykTestSuite {
     void testIsDrawFalse22() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "X";
         board[0][1] = "O";
         board[0][2] = "X";
@@ -393,7 +393,7 @@ class KolkoIKrzyzykTestSuite {
         board[2][2] = "O";
         Result result = new Result();
         //When
-        boolean isDraw = result.isDraw(board);
+        boolean isDraw = result.isDraw3x3(board);
         //Then
         assertFalse(isDraw);
     }
@@ -402,7 +402,7 @@ class KolkoIKrzyzykTestSuite {
     void testIsDrawFalse23() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "X";
         board[0][1] = "O";
         board[0][2] = "X";
@@ -414,7 +414,7 @@ class KolkoIKrzyzykTestSuite {
         board[2][2] = "O";
         Result result = new Result();
         //When
-        boolean isDraw = result.isDraw(board);
+        boolean isDraw = result.isDraw3x3(board);
         //Then
         assertFalse(isDraw);
     }
@@ -423,7 +423,7 @@ class KolkoIKrzyzykTestSuite {
     void testIsDrawFalse31() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "X";
         board[0][1] = "O";
         board[0][2] = "X";
@@ -435,7 +435,7 @@ class KolkoIKrzyzykTestSuite {
         board[2][2] = "O";
         Result result = new Result();
         //When
-        boolean isDraw = result.isDraw(board);
+        boolean isDraw = result.isDraw3x3(board);
         //Then
         assertFalse(isDraw);
     }
@@ -444,7 +444,7 @@ class KolkoIKrzyzykTestSuite {
     void testIsDrawFalse32() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "X";
         board[0][1] = "O";
         board[0][2] = "X";
@@ -456,7 +456,7 @@ class KolkoIKrzyzykTestSuite {
         board[2][2] = "O";
         Result result = new Result();
         //When
-        boolean isDraw = result.isDraw(board);
+        boolean isDraw = result.isDraw3x3(board);
         //Then
         assertFalse(isDraw);
     }
@@ -465,7 +465,7 @@ class KolkoIKrzyzykTestSuite {
     void testIsDrawFalse33() {
         //Given
         EmptyBoard emptyBoard = new EmptyBoard();
-        String[][] board = emptyBoard.getEmptyBoard();
+        String[][] board = emptyBoard.getEmptyBoard3X3();
         board[0][0] = "X";
         board[0][1] = "O";
         board[0][2] = "X";
@@ -477,20 +477,8 @@ class KolkoIKrzyzykTestSuite {
         board[2][2] = " ";
         Result result = new Result();
         //When
-        boolean isDraw = result.isDraw(board);
+        boolean isDraw = result.isDraw3x3(board);
         //Then
         assertFalse(isDraw);
     }
-
-//    @Test
-//    void testNoSuchFieldException() {
-//        //Given
-//        EmptyBoard emptyBoard = new EmptyBoard();
-//        String[][] board = emptyBoard.getEmptyBoard();
-//        PlayersMoves playersMoves = new PlayersMoves();
-//        board[4][4] = "X";
-//        //When & Then
-//        assertThrows(NoSuchFieldException.class, () -> playersMoves.getPlayerMove(board, "X"));
-//    }
-
 }

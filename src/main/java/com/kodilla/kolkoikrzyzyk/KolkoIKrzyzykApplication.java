@@ -12,14 +12,8 @@ public class KolkoIKrzyzykApplication {
 
     public static void main(String[] args) {
 
-//        SingleOrMultiplayer singleOrMultiplayer = new SingleOrMultiplayer();
-//        singleOrMultiplayer.chooseSingleOrMultiplayer();
-
-//        RealVsRealGame game = new RealVsRealGame();
-//        game.startRealVsRealGame();
-
-        ComputerVsRealGame game = new ComputerVsRealGame();
-        game.startComputerVsRealGame();
+        SingleOrMultiplayer singleOrMultiplayer = new SingleOrMultiplayer();
+        singleOrMultiplayer.chooseSingleOrMultiplayer();
 
     }
 }
