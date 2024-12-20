@@ -6,6 +6,8 @@ public class ScannerApp {
 
     Scanner scanner = new Scanner(System.in);
 
+
+
     static void getScannerString() {
 
     }

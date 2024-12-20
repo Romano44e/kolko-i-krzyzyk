@@ -11,9 +11,10 @@ public class BoardSize {
 
         System.out.println("Choose player board size: \n"
                 + "1 - board 3x3\n"
-                + "2 - board 10x10");
-        System.out.println();
+                + "2 - board 10x10\n");
+
         String boardSize = scanner.nextLine();
+        System.out.println();
         if (boardSize.equals("1")) {
             System.out.println("You have chosen board size 3x3");
             System.out.println();

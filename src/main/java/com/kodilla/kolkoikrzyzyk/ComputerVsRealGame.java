@@ -4,22 +4,24 @@ import java.util.List;
 
 public class ComputerVsRealGame {
 
+    PlayerNames playerName = new PlayerNames();
+    EmptyBoard emptyBoard = new EmptyBoard();
+    PlayersSigns playersSigns = new PlayersSigns();
+    Board boardPrint = new Board();
+    Result result = new Result();
+
+    RealPlayerMove realPlayerMove = new RealPlayerMove();
+    ComputerMove computerMove = new ComputerMove();
+    BoardAfterPlayersMove boardAfterPlayersMove = new BoardAfterPlayersMove();
+
+
+    BoardSize boardSize = new BoardSize();
+    GameLength gameLength = new GameLength();
+
     public void startComputerVsRealGame() {
 
-        InitialInformation initialInformation = new InitialInformation();
-        PlayerNames playerName = new PlayerNames();
-        EmptyBoard emptyBoard = new EmptyBoard();
-        PlayersSigns playersSigns = new PlayersSigns();
-        Board boardPrint = new Board();
-        Result result = new Result();
+        int gameLength1 = gameLength.getGameLength();
 
-        RealPlayerMove realPlayerMove = new RealPlayerMove();
-        ComputerMove computerMove = new ComputerMove();
-        BoardAfterPlayersMove boardAfterPlayersMove = new BoardAfterPlayersMove();
-
-        initialInformation.getInitialInformation();
-
-        BoardSize boardSize = new BoardSize();
         String[][] board = boardSize.choseBoardSize();
 
         String player1Name = playerName.getPlayer1Name();
@@ -39,6 +41,8 @@ public class ComputerVsRealGame {
         System.out.println();
 
         boolean endGame = false;
+        int player1WinsCounter = 0;
+        int player2WinsCounter = 0;
 
         while (!endGame) {
 
@@ -53,12 +57,32 @@ public class ComputerVsRealGame {
                 boolean isWinner1 = result.isWinner3x3(board1);
                 boolean draw1 = result.isDraw3x3(board1);
                 if (isWinner1) {
-                    System.out.println(player1Name + " won!");
+                    for (int i = 0; i < board1.length; i++) {
+                        for (int j = 0; j < board[i].length; j++) {
+                            board1[i][j] = " ";
+                        }
+                    }
+                    player1WinsCounter++;
+                    System.out.println(player1Name + " won!" + "\n"
+                            + "current result is: " + "\n"
+                            + player1Name + ": " + player1WinsCounter + "\n"
+                            + computerPlayerName + ": " + player2WinsCounter);
                     System.out.println();
-                    break;
+                    if (player1WinsCounter == gameLength1) {
+                        System.out.println(player1Name + " wins!");
+                        break;
+                    }
                 } else if (draw1) {
-                    System.out.println("It's a draw!");
-                    break;
+                    for (int i = 0; i < board1.length; i++) {
+                        for (int j = 0; j < board[i].length; j++) {
+                            board1[i][j] = " ";
+                        }
+                    }
+                    System.out.println("It's a draw!" + "\n"
+                            + "current result is: " + "\n"
+                            + player1Name + ": " + player1WinsCounter + "\n"
+                            + computerPlayerName + ": " + player2WinsCounter + "\n"
+                            + "play again!");
                 }
             }
 
@@ -66,12 +90,32 @@ public class ComputerVsRealGame {
                 boolean isWinner1 = result.isWinner10x10(board1);
                 boolean draw1 = result.isDraw10x10(board1);
                 if (isWinner1) {
-                    System.out.println(player1Name + " won!");
+                    for (int i = 0; i < board1.length; i++) {
+                        for (int j = 0; j < board[i].length; j++) {
+                            board1[i][j] = " ";
+                        }
+                    }
+                    player1WinsCounter++;
+                    System.out.println(player1Name + " won!" + "\n"
+                            + "current result is: " + "\n"
+                            + player1Name + ": " + player1WinsCounter + "\n"
+                            + computerPlayerName + ": " + player2WinsCounter);
                     System.out.println();
-                    break;
+                    if (player1WinsCounter == gameLength1) {
+                        System.out.println(player1Name + " wins!");
+                        break;
+                    }
                 } else if (draw1) {
-                    System.out.println("It's a draw!");
-                    break;
+                    for (int i = 0; i < board1.length; i++) {
+                        for (int j = 0; j < board[i].length; j++) {
+                            board1[i][j] = " ";
+                        }
+                    }
+                    System.out.println("It's a draw!" + "\n"
+                            + "current result is: " + "\n"
+                            + player1Name + ": " + player1WinsCounter + "\n"
+                            + computerPlayerName + ": " + player2WinsCounter + "\n"
+                            + "play again!");
                 }
             }
 
@@ -87,12 +131,32 @@ public class ComputerVsRealGame {
                 boolean isWinner2 = result.isWinner3x3(board2);
                 boolean draw2 = result.isDraw3x3(board2);
                 if (isWinner2) {
-                    System.out.println(computerPlayerName + " won!");
+                    for (int i = 0; i < board1.length; i++) {
+                        for (int j = 0; j < board[i].length; j++) {
+                            board2[i][j] = " ";
+                        }
+                    }
+                    player2WinsCounter++;
+                    System.out.println(computerPlayerName + " won!" + "\n"
+                            + "current result is: " + "\n"
+                            + player1Name + ": " + player1WinsCounter + "\n"
+                            + computerPlayerName + ": " + player2WinsCounter);
                     System.out.println();
-                    break;
+                    if (player2WinsCounter == gameLength1) {
+                        System.out.println(computerPlayerName + " wins!");
+                        break;
+                    }
                 } else if (draw2) {
-                    System.out.println("It's a draw!");
-                    break;
+                    for (int i = 0; i < board1.length; i++) {
+                        for (int j = 0; j < board[i].length; j++) {
+                            board1[i][j] = " ";
+                        }
+                    }
+                    System.out.println("It's a draw!" + "\n"
+                            + "current result is: " + "\n"
+                            + player1Name + ": " + player1WinsCounter + "\n"
+                            + computerPlayerName + ": " + player2WinsCounter + "\n"
+                            + "play again!");
                 }
             }
 
@@ -100,12 +164,32 @@ public class ComputerVsRealGame {
                 boolean isWinner2 = result.isWinner10x10(board2);
                 boolean draw2 = result.isDraw10x10(board2);
                 if (isWinner2) {
-                    System.out.println(computerPlayerName + " won!");
+                    for (int i = 0; i < board1.length; i++) {
+                        for (int j = 0; j < board[i].length; j++) {
+                            board2[i][j] = " ";
+                        }
+                    }
+                    player2WinsCounter++;
+                    System.out.println(computerPlayerName + " won!" + "\n"
+                            + "current result is: " + "\n"
+                            + player1Name + ": " + player1WinsCounter + "\n"
+                            + computerPlayerName + ": " + player2WinsCounter);
                     System.out.println();
-                    break;
+                    if (player2WinsCounter == gameLength1) {
+                        System.out.println(computerPlayerName + " wins!");
+                        break;
+                    }
                 } else if (draw2) {
-                    System.out.println("It's a draw!");
-                    break;
+                    for (int i = 0; i < board1.length; i++) {
+                        for (int j = 0; j < board[i].length; j++) {
+                            board1[i][j] = " ";
+                        }
+                    }
+                    System.out.println("It's a draw!" + "\n"
+                            + "current result is: " + "\n"
+                            + player1Name + ": " + player1WinsCounter + "\n"
+                            + computerPlayerName + ": " + player2WinsCounter + "\n"
+                            + "play again!");
                 }
             }
         }

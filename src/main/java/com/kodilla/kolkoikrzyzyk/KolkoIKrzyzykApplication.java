@@ -3,6 +3,7 @@ package com.kodilla.kolkoikrzyzyk;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.awt.*;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -12,8 +13,11 @@ public class KolkoIKrzyzykApplication {
 
     public static void main(String[] args) {
 
-        SingleOrMultiplayer singleOrMultiplayer = new SingleOrMultiplayer();
-        singleOrMultiplayer.chooseSingleOrMultiplayer();
+//        PlayerMode playerMode = new PlayerMode();
+//        playerMode.startXAndOGame();
+
+        Menu menu = new Menu();
+        menu.displayMenu();
 
     }
 }
