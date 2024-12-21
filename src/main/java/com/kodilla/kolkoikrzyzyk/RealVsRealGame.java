@@ -1,6 +1,9 @@
 package com.kodilla.kolkoikrzyzyk;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 public class RealVsRealGame {
 
@@ -15,6 +18,7 @@ public class RealVsRealGame {
 
     BoardSize boardSize = new BoardSize();
     GameLength gameLength = new GameLength();
+    Ranking ranking = new Ranking();
 
 
     public void startRealVsRealGame() {
@@ -45,6 +49,8 @@ public class RealVsRealGame {
 
         while (!endGame) {
 
+            Map<String, Integer> rankingMap = new HashMap<>();
+
             System.out.println(player1Name + ", your turn");
 
             Integer[] playerMoveBoard1 = playersMovesBoard.getRealPlayerMove(board);
@@ -67,6 +73,16 @@ public class RealVsRealGame {
                             + player1Name + ": " + player1WinsCounter + "\n"
                             + player2Name + ": " + player2WinsCounter);
                     System.out.println();
+
+                    if (rankingMap.containsKey(player1Name)) {
+                        Integer player1SavedPoints = rankingMap.get(player1Name);
+                        player1SavedPoints += player1WinsCounter;
+//                        rankingMap.remove(player1Name);
+                        rankingMap.put(player1Name, player1SavedPoints);
+                    } else if (!rankingMap.containsKey(player1Name)) {
+                        rankingMap.put(player1Name, player1WinsCounter);
+                    }
+                    ranking.saveMap(rankingMap);
                     if (player1WinsCounter == gameLength1) {
                         System.out.println(player1Name + " wins!");
                         break;

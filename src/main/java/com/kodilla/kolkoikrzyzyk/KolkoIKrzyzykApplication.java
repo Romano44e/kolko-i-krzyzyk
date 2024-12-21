@@ -19,11 +19,17 @@ public class KolkoIKrzyzykApplication {
 //        ComputerVsRealGameLevelHard computerVsRealGameLevelHard = new ComputerVsRealGameLevelHard();
 //        computerVsRealGameLevelHard.startComputerVsRealGame();
 
-        PlayerMode playerMode = new PlayerMode();
-        playerMode.startXAndOGame();
+//        RealVsRealGame realVsRealGame = new RealVsRealGame();
+//        realVsRealGame.startRealVsRealGame();
+
+//        PlayerMode playerMode = new PlayerMode();
+//        playerMode.startXAndOGame();
 
 //        Menu menu = new Menu();
 //        menu.displayMenu();
+
+        Ranking ranking = new Ranking();
+        ranking.loadMap();
 
     }
 }
