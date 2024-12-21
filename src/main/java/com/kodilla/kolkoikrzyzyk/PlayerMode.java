@@ -6,7 +6,9 @@ public class PlayerMode {
 
     Scanner scanner  = new Scanner(System.in);
     ComputerVsRealGame computerVsRealGame = new ComputerVsRealGame();
+    ComputerVsRealGameLevelHard computerVsRealGameLevelHard = new ComputerVsRealGameLevelHard();
     RealVsRealGame realVsRealGame = new RealVsRealGame();
+    DifficultyLevel difficultyLevel = new DifficultyLevel();
 
     public void startXAndOGame() {
         System.out.println("Choose player mode: \n"
@@ -18,7 +20,12 @@ public class PlayerMode {
         if (playerMode.equals("1")) {
             System.out.println("You have chosen player mode: Single player");
             System.out.println();
-            computerVsRealGame.startComputerVsRealGame();
+            String difficultyLevel1 = difficultyLevel.getDifficultyLevel();
+            if (difficultyLevel1.equals("1") || difficultyLevel1.equals("2")) {
+                computerVsRealGame.startComputerVsRealGame();
+            } else if (difficultyLevel1.equals("3")) {
+                computerVsRealGameLevelHard.startComputerVsRealGame();
+            }
         } else if (playerMode.equals("2")) {
             System.out.println("You have chosen player mode: Multiplayer");
             System.out.println();

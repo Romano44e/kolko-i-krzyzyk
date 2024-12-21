@@ -2,7 +2,7 @@ package com.kodilla.kolkoikrzyzyk;
 
 import java.util.List;
 
-public class ComputerVsRealGame {
+public class ComputerVsRealGameLevelHard {
 
     PlayerNames playerName = new PlayerNames();
     EmptyBoard emptyBoard = new EmptyBoard();
@@ -50,7 +50,6 @@ public class ComputerVsRealGame {
 
             Integer[] playerMoveBoard1 = realPlayerMove.getRealPlayerMove(board);
             String[][] board1 = boardAfterPlayersMove.getBoardAfterPlayersMove(board, playerMoveBoard1, player1Sign);
-
 
             boardPrint.printBoard(board1);
 
@@ -122,8 +121,8 @@ public class ComputerVsRealGame {
 
             System.out.println(computerPlayerName + "s turn");
 
-            Integer[] playerMoveBoard2 = computerMove.getComputerPlayerMove(board1);
-//            Integer[] playerMoveBoard2 = computerMove.getComputerPlayerMoveLevelHard(board1, playerMoveBoard1);
+
+            Integer[] playerMoveBoard2 = computerMove.getComputerPlayerMoveLevelHard(board1, playerMoveBoard1);
 
             String[][] board2 = boardAfterPlayersMove.getBoardAfterPlayersMove(board1, playerMoveBoard2, player2Sign);
 

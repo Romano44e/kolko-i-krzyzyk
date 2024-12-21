@@ -13,11 +13,17 @@ public class KolkoIKrzyzykApplication {
 
     public static void main(String[] args) {
 
-//        PlayerMode playerMode = new PlayerMode();
-//        playerMode.startXAndOGame();
+//        ComputerVsRealGame computerVsRealGame = new ComputerVsRealGame();
+//        computerVsRealGame.startComputerVsRealGame();
 
-        Menu menu = new Menu();
-        menu.displayMenu();
+//        ComputerVsRealGameLevelHard computerVsRealGameLevelHard = new ComputerVsRealGameLevelHard();
+//        computerVsRealGameLevelHard.startComputerVsRealGame();
+
+        PlayerMode playerMode = new PlayerMode();
+        playerMode.startXAndOGame();
+
+//        Menu menu = new Menu();
+//        menu.displayMenu();
 
     }
 }
