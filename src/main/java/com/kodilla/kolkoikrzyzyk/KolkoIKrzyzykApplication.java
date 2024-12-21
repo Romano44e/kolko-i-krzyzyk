@@ -25,11 +25,11 @@ public class KolkoIKrzyzykApplication {
 //        PlayerMode playerMode = new PlayerMode();
 //        playerMode.startXAndOGame();
 
-//        Menu menu = new Menu();
-//        menu.displayMenu();
+        Menu menu = new Menu();
+        menu.displayMenu();
 
-        Ranking ranking = new Ranking();
-        ranking.loadMap();
+//        Ranking ranking = new Ranking();
+//        ranking.loadMap();
 
     }
 }
